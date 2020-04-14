@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+  mongo:
+    image: mongo:4.2
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 27018:27018
+    logging:
+      driver: none
+
+  backend:
+    container_name: backend
+    image: node:12
+    ports:
+      - 9229:9229
+      - 3000:3000
+    volumes:
+      - .:/app
+      - npm-cache:/root/.npm
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - mongo
+    tty: true
+    command:
+      - /bin/bash
+      - -c
+      - |
+        npm i
+        npm run start
+
+volumes:
+  node_modules-cache:
+  npm-cache:

@@ -1,0 +1,9 @@
+POST http://localhost:3000/pets/cat HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Charles",
+    "age": 1,
+    "breed":"male",
+    "hasClippedClaws": false
+}

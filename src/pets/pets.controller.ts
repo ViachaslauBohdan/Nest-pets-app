@@ -21,6 +21,10 @@ export class PetsController {
     await this.petsService.addDog(createDogDto);
   }
 
+  // @Post('/owner')
+  // POST request for owners missing
+
+
   @Get()
   async findAll(): Promise<Array<Cat | Dog>> {
     return await this.petsService.findAll();

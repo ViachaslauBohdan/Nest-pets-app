@@ -11,11 +11,13 @@ export class PetsController {
 
   @Post('/cat')
   async addCat(@Body() createCatDto: CreateCatDto) {
+    // Request body validation missing
     await this.petsService.addCat(createCatDto);
   }
 
   @Post('/dog')
   async addDog(@Body() createDogDto: CreateDogDto) {
+    // Request body validation missing
     await this.petsService.addDog(createDogDto);
   }
 

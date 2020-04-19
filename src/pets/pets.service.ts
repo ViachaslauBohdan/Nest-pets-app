@@ -134,7 +134,7 @@ export class PetsService {
     for (const owner of owners) {
       result.push({
         petsCount: owner._id,
-        owners: owner.owners.filter(owner => owner.age == ownerAge),
+        owners: owner.owners.filter(owner => owner.age === ownerAge),
       });
     }
 

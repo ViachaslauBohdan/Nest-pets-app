@@ -45,7 +45,7 @@ export class PetsService {
     if (!cat) {
       throw new HttpException(
         'Cat with given id can not be found',
-        HttpStatus.INTERNAL_SERVER_ERROR,
+        HttpStatus.NOT_FOUND, 
       );
     }
 
@@ -57,7 +57,7 @@ export class PetsService {
     if (!dog) {
       throw new HttpException(
         'Dog with given id can not be found',
-        HttpStatus.INTERNAL_SERVER_ERROR,
+        HttpStatus.NOT_FOUND,
       );
     }
 
